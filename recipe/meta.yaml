@@ -10,17 +10,16 @@ source:
   sha256: a1196fdddf1e364b02ec68a05e8ff8f6914fee10fbca2e6b6735f166bb0da8d4
 
 build:
-  noarch: python
   number: 0
   script_env: PYTHONUTF8=1
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --ignore-installed --no-cache-dir -vvv
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python
     - pip
   run:
-    - python >={{ python_min }}
+    - python
     - rich >=12.0.0
     - docutils
 
