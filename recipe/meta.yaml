@@ -34,8 +34,11 @@ test:
 about:
   home: https://rich-rst.readthedocs.io
   summary: A reStructuredText renderer for rich
-  keywords: python cli sphinx python3 restructuredtext rich rst docutils command-line-interface
+  description: |
+    Allows rich to print a reStructuredText document in a 
+    rich format similar to rich.Markdown.
   dev_url: https://github.com/wasi-master/rich-rst
+  doc_url: https://rich-rst.readthedocs.io
   license_file: LICENSE
   license: MIT
   license_family: MIT
