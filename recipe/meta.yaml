@@ -10,31 +10,34 @@ source:
   sha256: a1196fdddf1e364b02ec68a05e8ff8f6914fee10fbca2e6b6735f166bb0da8d4
 
 build:
-  noarch: python
   number: 0
-  script_env: PYTHONUTF8=1
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --ignore-installed --no-cache-dir -vvv
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python
     - pip
   run:
-    - python >={{ python_min }}
+    - python
     - rich >=12.0.0
     - docutils
 
 test:
   requires:
-    - python {{ python_min }}
+    - pip
+  commands:
+    - pip check
   imports:
     - rich_rst
 
 about:
   home: https://rich-rst.readthedocs.io
   summary: A reStructuredText renderer for rich
-  keywords: python cli sphinx python3 restructuredtext rich rst docutils command-line-interface
+  description: |
+    Allows rich to print a reStructuredText document in a 
+    rich format similar to rich.Markdown.
   dev_url: https://github.com/wasi-master/rich-rst
+  doc_url: https://rich-rst.readthedocs.io
   license_file: LICENSE
   license: MIT
   license_family: MIT
