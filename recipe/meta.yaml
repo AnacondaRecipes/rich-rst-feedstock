@@ -21,7 +21,6 @@ requirements:
   run:
     - python
     - rich >=12.0.0
-    - docutils
     - pygments >=2.0.0
 
 test:
@@ -40,7 +39,9 @@ about:
     rich format similar to rich.Markdown.
   dev_url: https://github.com/wasi-master/rich-rst
   doc_url: https://rich-rst.readthedocs.io
-  license_file: LICENSE
+  license_file:
+    - LICENSE
+    - rich_rst/_vendor/LICENSES.txt
   license: MIT
   license_family: MIT
 
