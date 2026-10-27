@@ -10,13 +10,14 @@ source:
   sha256: a1196fdddf1e364b02ec68a05e8ff8f6914fee10fbca2e6b6735f166bb0da8d4
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --ignore-installed --no-cache-dir -vvv
 
 requirements:
   host:
     - python
     - pip
+    - setuptools
   run:
     - python
     - rich >=12.0.0
